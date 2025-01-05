@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pardner/presentation/components/app_bar_widget.dart';
+import 'package:pardner/presentation/components/buttons.dart';
 import 'package:pardner/presentation/components/study_set_list_widget.dart';
 import 'package:pardner/presentation/components/timer_preview.dart';
 
@@ -9,8 +10,10 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(preferredSize: Size.fromHeight(64), child: AppBarWidget()),
+      appBar: PreferredSize(
+          preferredSize: Size.fromHeight(64), child: AppBarWidget()),
       body: SafeArea(
+          child: SingleChildScrollView(
         child: Center(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 26),
@@ -19,12 +22,18 @@ class HomePage extends StatelessWidget {
               // mainAxisAlignment: MainAxisAlignment.spaceBetween,
               spacing: 24,
               children: [
-              StudySetTimerPreviewWidget(),
-              StudySetListWidget()
-            ],),
+                StudySetTimerPreviewWidget(),
+                StudySetListWidget(),
+                Button(title: 'start session', color: Color(0XFFFC9A04))
+                    .primaryLongButton(context),
+                SizedBox(
+                  height: 32,
+                )
+              ],
+            ),
           ),
-        )
         ),
+      )),
     );
   }
 }

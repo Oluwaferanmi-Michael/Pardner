@@ -4,6 +4,7 @@ import 'package:pardner/presentation/pages/home_page.dart';
 
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MainApp());
 }
 

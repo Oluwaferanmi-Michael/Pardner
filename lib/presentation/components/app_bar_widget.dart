@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:pardner/presentation/components/date_widget.dart';
 import 'package:pardner/presentation/components/profile_widget.dart';
@@ -9,16 +8,20 @@ class AppBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: Row(children: [
-        SizedBox(width: 24,),
-        DateWidget(),
+      leading: Row(mainAxisSize: MainAxisSize.min, children: [
+        SizedBox(
+          width: 24,
+        ),
+        Flexible(child: DateWidget()),
       ]),
-      leadingWidth: 100,
+      leadingWidth: MediaQuery.sizeOf(context).longestSide,
       backgroundColor: Colors.white,
       elevation: 0,
       actions: [
         ProfileWidget(),
-        SizedBox(width: 24,)
+        SizedBox(
+          width: 24,
+        )
       ],
     );
   }
