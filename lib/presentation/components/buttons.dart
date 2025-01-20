@@ -40,7 +40,7 @@ extension Buttons on Button {
       ));
 
 // primary long button
-  Widget primaryLongButton(BuildContext context) => GestureDetector(
+  Widget primaryLongButton(BuildContext context, exe) => GestureDetector(
       onTap: exe,
       child: Container(
         decoration: BoxDecoration(

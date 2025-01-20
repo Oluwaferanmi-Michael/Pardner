@@ -1,0 +1,64 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:297563413848231178",
+      "lastPropertyId": "3:8145181362618786385",
+      "name": "StudyItemModel",
+      "properties": [
+        {
+          "id": "1:1150974399043662620",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:6576055405366489175",
+          "name": "studyItemName",
+          "type": 9
+        },
+        {
+          "id": "3:8145181362618786385",
+          "name": "duration",
+          "type": 6
+        }
+      ],
+      "relations": [
+        {
+          "id": "2:2303739398122468565",
+          "name": "studySet",
+          "targetId": "2:3580325023322230753"
+        }
+      ]
+    },
+    {
+      "id": "2:3580325023322230753",
+      "lastPropertyId": "1:4963733646912077476",
+      "name": "StudySetModel",
+      "properties": [
+        {
+          "id": "1:4963733646912077476",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "2:3580325023322230753",
+  "lastIndexId": "0:0",
+  "lastRelationId": "2:2303739398122468565",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [],
+  "retiredRelationUids": [
+    6320222587442499776
+  ],
+  "version": 1
+}
