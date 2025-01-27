@@ -4,7 +4,7 @@ import 'package:pardner/presentation/components/app_bar_widget.dart';
 import 'package:pardner/presentation/components/controllers/bottom_nav_bar_controller.dart';
 import 'package:pardner/presentation/pages/main_page/schedule_page.dart';
 
-import '../../components/controllers/floating_bottom_nav_bar.dart';
+import '../../components/floating_bottom_nav_bar.dart';
 import 'home_page.dart';
 
 class MainPage extends ConsumerStatefulWidget {
@@ -41,7 +41,7 @@ class _MainPageState extends ConsumerState<MainPage> {
           PageView(
             controller: controller,
             onPageChanged: (value) =>
-                ref.watch(navBarControllerProvider.notifier).navIndex(value),
+                ref.read(navBarControllerProvider.notifier).navIndex(value),
             children: [HomePage(), SchedulePage()],
           ),
           Align(

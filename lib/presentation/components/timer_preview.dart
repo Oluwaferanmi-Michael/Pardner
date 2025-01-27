@@ -10,7 +10,7 @@ class StudySetTimerPreviewWidget extends StatelessWidget {
       padding: EdgeInsets.all(14),
       decoration: BoxDecoration(
           color: Color(0xFFCEC1ED),
-          border: Border.all(color: Color(0xFF04000B), width: 2),
+          border: ComponentBorder.thick(),
           borderRadius: BorderRadius.circular(14.0)),
       child: Column(
         spacing: 24,
@@ -28,18 +28,7 @@ class StudySetTimerPreviewWidget extends StatelessWidget {
           ),
           Text('07:58',
               style: TextStyle(
-                  shadows: [
-                    Shadow(
-                      color: Colors.black,
-                      blurRadius: 0,
-                      offset: Offset(4, 2),
-                    ),
-                    Shadow(
-                      color: Colors.white,
-                      blurRadius: 0,
-                      offset: Offset(3, 1),
-                    )
-                  ],
+                  shadows: Shadows.text,
                   fontFamily: FontFamilies.cabinet,
                   height: .5,
                   color: AppColors.black,
@@ -55,7 +44,7 @@ class StudySetTimerPreviewWidget extends StatelessWidget {
                   decoration: BoxDecoration(
                       color: Color(0xFFFC9A04),
                       borderRadius: BorderRadius.all(Radius.circular(4)),
-                      border: Border.all(color: Color(0xFF04000B), width: 2)),
+                      border: ComponentBorder.thick()),
                   child: const Icon(Icons.play_arrow_outlined),
                 ),
               )

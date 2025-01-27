@@ -25,17 +25,11 @@
           "type": 6
         }
       ],
-      "relations": [
-        {
-          "id": "2:2303739398122468565",
-          "name": "studySet",
-          "targetId": "2:3580325023322230753"
-        }
-      ]
+      "relations": []
     },
     {
       "id": "2:3580325023322230753",
-      "lastPropertyId": "1:4963733646912077476",
+      "lastPropertyId": "5:7435753940154734231",
       "name": "StudySetModel",
       "properties": [
         {
@@ -43,14 +37,40 @@
           "name": "id",
           "type": 6,
           "flags": 1
+        },
+        {
+          "id": "2:208665609782145861",
+          "name": "name",
+          "type": 9
+        },
+        {
+          "id": "3:6214772534025120615",
+          "name": "description",
+          "type": 9
+        },
+        {
+          "id": "4:2215004140389144644",
+          "name": "dates",
+          "type": 30
+        },
+        {
+          "id": "5:7435753940154734231",
+          "name": "totalTime",
+          "type": 6
         }
       ],
-      "relations": []
+      "relations": [
+        {
+          "id": "3:6970483397980491624",
+          "name": "studySet",
+          "targetId": "2:3580325023322230753"
+        }
+      ]
     }
   ],
   "lastEntityId": "2:3580325023322230753",
   "lastIndexId": "0:0",
-  "lastRelationId": "2:2303739398122468565",
+  "lastRelationId": "3:6970483397980491624",
   "lastSequenceId": "0:0",
   "modelVersion": 5,
   "modelVersionParserMinimum": 5,
@@ -58,7 +78,8 @@
   "retiredIndexUids": [],
   "retiredPropertyUids": [],
   "retiredRelationUids": [
-    6320222587442499776
+    6320222587442499776,
+    2303739398122468565
   ],
   "version": 1
 }

@@ -3,7 +3,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'package:pardner/presentation/components/controllers/bottom_nav_bar_controller.dart';
 
-import '../../../config/styles.dart';
+import '../../config/styles.dart';
 
 class FloatingBottomNavigationBar extends ConsumerWidget {
   final PageController pageController;
@@ -48,11 +48,7 @@ class FloatingBottomNavigationBar extends ConsumerWidget {
                 // border: Border.all(color: AppColors.black, width: 2),
                 borderRadius: BorderRadius.circular(120),
                 boxShadow: [
-                  BoxShadow(
-                      color: AppColors.shadow,
-                      offset: Offset(0, 4),
-                      blurRadius: 4,
-                      blurStyle: BlurStyle.normal)
+                  Shadows.regularBlur
                 ]),
             child: Row(
                 spacing: 20,
@@ -67,6 +63,7 @@ class FloatingBottomNavigationBar extends ConsumerWidget {
                       ref
                           .read(navBarControllerProvider.notifier)
                           .navIndex(index);
+                          
                       pageController.animateToPage(index,
                           duration: Duration(milliseconds: 400),
                           curve: Curves.easeIn);

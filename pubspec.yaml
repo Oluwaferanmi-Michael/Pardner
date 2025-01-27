@@ -12,6 +12,7 @@ dependencies:
     sdk: flutter
   
   
+  flutter_hooks: ^0.20.5
   flutter_svg: ^2.0.17
   hooks_riverpod: ^2.6.1
   objectbox: ^4.0.3

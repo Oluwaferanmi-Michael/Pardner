@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pardner/config/styles.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
+import 'study_item_widget.dart';
 
 class StudySetListWidget extends StatefulWidget {
   const StudySetListWidget({super.key});
@@ -43,16 +44,16 @@ class _StudySetListWidgetState extends State<StudySetListWidget> {
                     fontSize: 12,
                     fontWeight: FontWeight.w800),
               ),
-              SmoothPageIndicator(
-                controller: controller,
-                count: 3,
-                effect: WormEffect(
-                    dotHeight: 4,
-                    dotWidth: 4,
-                    activeDotColor: AppColors.deepPurple,
-                    dotColor: AppColors.lightOrange,
-                    ),
-              )
+              // SmoothPageIndicator(
+              //   controller: controller,
+              //   count: 3,
+              //   effect: WormEffect(
+              //     dotHeight: 4,
+              //     dotWidth: 4,
+              //     activeDotColor: AppColors.deepPurple,
+              //     dotColor: AppColors.lightOrange,
+              //   ),
+              // )
             ],
           ),
           SizedBox(
@@ -60,7 +61,7 @@ class _StudySetListWidgetState extends State<StudySetListWidget> {
             height: MediaQuery.sizeOf(context).height / 2 - 42,
             child: PageView.builder(
                 controller: controller,
-                itemCount: 2,
+                itemCount: 3,
                 itemBuilder: (context, pageIndex) {
                   return SizedBox(
                     width: MediaQuery.sizeOf(context).width,
@@ -72,42 +73,7 @@ class _StudySetListWidgetState extends State<StudySetListWidget> {
                         separatorBuilder: (context, index) =>
                             SizedBox(height: 12),
                         itemBuilder: (context, listIndex) {
-                          return Container(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 12, vertical: 14),
-                            decoration: BoxDecoration(
-                                color: AppColors.lightPurple,
-                                borderRadius: BorderRadius.circular(16)),
-                            child: Row(
-                              children: [
-                                // About the Session
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      'A Little Life',
-                                      style: TextStyle(
-                                          fontFamily: FontFamilies.satoshi,
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.w800),
-                                    ),
-                                    Text(
-                                      '2 Hours',
-                                      style: TextStyle(
-                                        fontFamily: FontFamilies.satoshi,
-                                        fontSize: 10,
-                                      ),
-                                    )
-                                  ],
-                                ),
-
-                                // other details
-                                Column()
-                              ],
-                            ),
-                          );
+                          return StudyItemWidget();
                         }),
                   );
                 }),

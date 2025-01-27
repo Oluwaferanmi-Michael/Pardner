@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pardner/config/styles.dart';
 
 import '../../components/buttons.dart';
 import '../../components/study_set_list_widget.dart';
@@ -23,14 +24,31 @@ class HomePage extends StatelessWidget {
             children: [
               StudySetTimerPreviewWidget(),
               StudySetListWidget(),
-              Button(title: 'Create new Study Set', color: Color(0XFFFC9A04))
-                  .primaryLongButton(
-                      context,
-                      () => Navigator.push(
+              Row(
+                spacing: 12,
+                children: [
+                  Flexible(
+                    child: Button(
+                            title: 'Create new Study Set',
+                            color: AppColors.orange)
+                        .primaryLongButton(
+                            context,
+                            () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => StudySetCreationPage(),
+                                ))),
+                  ),
+                  Button(title: 'start study set', color: AppColors.lightPurple)
+                      .primaryLongButton(
                           context,
-                          MaterialPageRoute(
-                            builder: (context) => StudySetCreationPage(),
-                          ))),
+                          () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => StudySetCreationPage(),
+                              ))),
+                ],
+              ),
               SizedBox(
                 height: 24,
               )
