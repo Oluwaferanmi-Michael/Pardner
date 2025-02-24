@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import 'package:pardner/presentation/components/controllers/bottom_nav_bar_controller.dart';
+import 'package:pardner/UI/components/controllers/bottom_nav_bar_controller.dart';
 
 import '../../config/styles.dart';
 

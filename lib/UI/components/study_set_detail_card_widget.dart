@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:pardner/UI/components/study_card_data_widget.dart';
 import 'package:pardner/config/insets.dart';
+import 'package:pardner/UI/components/bottom_sheets/bottom_sheets.dart';
 import '../../config/styles.dart';
 
 import 'bottom_sheets/create_study_item_bottom_sheet.dart';
 import 'buttons.dart';
-import 'study_card_data_widget.dart';
+
 
 class StudySetDetailCard extends StatelessWidget {
   const StudySetDetailCard({
@@ -14,10 +16,16 @@ class StudySetDetailCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(Insets.x12),
+      clipBehavior: Clip.antiAlias,
+      alignment: Alignment.center,
+      padding: EdgeInsets.symmetric(
+        horizontal: Insets.x12,
+        vertical: Insets.x12,
+      ),
       width: MediaQuery.sizeOf(context).shortestSide,
       // height: MediaQuery(data: data, child: child),
-      margin: EdgeInsets.symmetric(horizontal: Insets.x8),
+      margin: EdgeInsets.symmetric(horizontal: Insets.x8, vertical: Insets.x8),
+
       decoration: BoxDecoration(
           border: Border.all(width: 1, color: AppColors.black),
           borderRadius: BorderRadius.circular(16),
@@ -30,7 +38,7 @@ class StudySetDetailCard extends StatelessWidget {
           ],
           color: AppColors.offWhiteCard),
       child: Column(
-        // mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         spacing: Insets.x12,
         children: [
@@ -72,19 +80,13 @@ class StudySetDetailCard extends StatelessWidget {
           ),
 
           // Study Set Details
-          Container(
-            decoration: BoxDecoration(
-                color: AppColors.purple,
-                borderRadius: BorderRadius.circular(16)),
-            padding: EdgeInsets.all(16),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                StudySetCardDataWidget(),
-                StudySetCardDataWidget(),
-                StudySetCardDataWidget(),
-              ],
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              StudySetCardDataWidget(),
+              StudySetCardDataWidget(),
+              StudySetCardDataWidget(),
+            ],
           ),
 
           // Image.asset(
@@ -94,10 +96,7 @@ class StudySetDetailCard extends StatelessWidget {
 
           Button(color: AppColors.orange, title: 'edit study set')
               .primaryLongButton(context, () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => CreateStudyItemPresentation()));
+            CreateStudyItemBottomSheet().present(context);
           })
         ],
       ),
@@ -113,50 +112,37 @@ class StudySetTitleAndMethod extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      mainAxisSize: MainAxisSize.max,
       children: [
+        Text(
+          'Study Set 1',
+          style: TextStyle(
+              fontFamily: FontFamilies.cabinet,
+              fontSize: 32,
+              fontWeight: FontWeight.w800),
+        ),
         Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
           mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
-              child: Text(
-                'Study Set 1',
-                style: TextStyle(
-                    fontFamily: FontFamilies.cabinet,
-                    fontSize: 36,
-                    fontWeight: FontWeight.w800),
-              ),
+            Text(
+              'pomodoro',
+              style: TextStyle(
+                  color: AppColors.deepPurple,
+                  fontFamily: FontFamilies.satoshi,
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold),
             ),
             Text(
               '2 Hours',
               style: TextStyle(
                   fontFamily: FontFamilies.cabinet,
-                  fontSize: 8,
+                  fontSize: 12,
                   fontWeight: FontWeight.w800),
             ),
           ],
         ),
-        Container(
-            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-            decoration: BoxDecoration(
-              color: AppColors.lightPurple,
-              border: Border.all(
-                  width: 2,
-                  color: AppColors.black,
-                  strokeAlign: BorderSide.strokeAlignOutside),
-              borderRadius: BorderRadius.circular(16),
-            ),
-            child: Text(
-              'pomodoro',
-              style: TextStyle(
-                  color: AppColors.black,
-                  fontFamily: FontFamilies.satoshi,
-                  fontSize: 12,
-                  fontWeight: FontWeight.bold),
-            ))
       ],
     );
   }

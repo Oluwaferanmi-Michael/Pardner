@@ -33,38 +33,40 @@ class _SchedulePageState extends State<SchedulePage> {
             // mainAxisSize: MainAxisSize.min,
             spacing: Insets.x12,
             children: [
-              // SizedBox(
-              //   height: Insets.x8,
-              // ),
-              Text(
-                'Study sets per day',
-                style: TextStyle(
-                    fontFamily: FontFamilies.satoshi,
-                    fontSize: 12,
-                    fontWeight: FontWeight.w800),
-              ),
-              Flexible(
-                fit: FlexFit.tight,
-                child: Container(
-                  clipBehavior: Clip.none,
-                  height: 371,
-                  child: PageView.builder(
-                    padEnds: false,
-                    pageSnapping: true,
-                    itemCount: 3,
-                    controller: carouselController,
-                    itemBuilder: (context, index) => StudySetDetailCard(),
-                  ),
-                ),
-              ),
               Text(
                 'Schedule',
                 style: TextStyle(
                     fontFamily: FontFamilies.satoshi,
-                    fontSize: 12,
+                    fontSize: 16,
                     fontWeight: FontWeight.w800),
               ),
               MonthAndDateStudySetSelector(),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Study sets per day',
+                    style: TextStyle(
+                        fontFamily: FontFamilies.satoshi,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w800),
+                  ),
+                  Container(
+                    clipBehavior: Clip.none,
+                    height: 380,
+                    child: PageView.builder(
+                      padEnds: false,
+                      pageSnapping: true,
+                      itemCount: 3,
+                      controller: carouselController,
+                      itemBuilder: (context, index) => StudySetDetailCard(),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: Insets.x28,
+              )
             ],
           ),
         ),

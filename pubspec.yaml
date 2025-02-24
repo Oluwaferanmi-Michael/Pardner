@@ -7,6 +7,7 @@ environment:
   sdk: ^3.6.0
 
 dependencies:
+  calendar_slider: ^0.0.4
   equatable: ^2.0.7
   flutter:
     sdk: flutter
@@ -15,7 +16,7 @@ dependencies:
   flutter_hooks: ^0.20.5
   flutter_svg: ^2.0.17
   hooks_riverpod: ^2.6.1
-  objectbox: ^4.0.3
+  objectbox: ^4.1.0
   
   
   objectbox_sync_flutter_libs: any

@@ -28,13 +28,13 @@ class _StudySetListWidgetState extends State<StudySetListWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: MediaQuery.sizeOf(context).width,
-      height: MediaQuery.sizeOf(context).height / 2,
-      child: Column(
-        spacing: 8,
-        children: [
-          Row(
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      spacing: 8,
+      children: [
+        Flexible(
+          flex: 1,
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
@@ -56,30 +56,25 @@ class _StudySetListWidgetState extends State<StudySetListWidget> {
               // )
             ],
           ),
-          SizedBox(
-            width: MediaQuery.sizeOf(context).width,
-            height: MediaQuery.sizeOf(context).height / 2 - 42,
-            child: PageView.builder(
-                controller: controller,
-                itemCount: 3,
-                itemBuilder: (context, pageIndex) {
-                  return SizedBox(
-                    width: MediaQuery.sizeOf(context).width,
-                    height: MediaQuery.sizeOf(context).height / 3,
-                    child: ListView.separated(
-                        // physics: NeverScrollableScrollPhysics(),
-                        itemCount: 4,
-                        padding: EdgeInsets.symmetric(horizontal: 4),
-                        separatorBuilder: (context, index) =>
-                            SizedBox(height: 12),
-                        itemBuilder: (context, listIndex) {
-                          return StudyItemWidget();
-                        }),
-                  );
-                }),
-          )
-        ],
-      ),
+        ),
+        SizedBox(
+          height: 230,
+          child: PageView.builder(
+              controller: controller,
+              itemCount: 3,
+              itemBuilder: (context, pageIndex) {
+                return ListView.separated(
+                    shrinkWrap: true,
+                    itemCount: 4,
+                    separatorBuilder: (context, index) => SizedBox(height: 12),
+                    itemBuilder: (context, listIndex) {
+                      return StudyItemWidget(
+                        itemName: 'wer',
+                      );
+                    });
+              }),
+        )
+      ],
     );
   }
 }

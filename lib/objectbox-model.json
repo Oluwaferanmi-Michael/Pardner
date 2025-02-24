@@ -5,7 +5,7 @@
   "entities": [
     {
       "id": "1:297563413848231178",
-      "lastPropertyId": "3:8145181362618786385",
+      "lastPropertyId": "5:954972339434663846",
       "name": "StudyItemModel",
       "properties": [
         {
@@ -23,13 +23,18 @@
           "id": "3:8145181362618786385",
           "name": "duration",
           "type": 6
+        },
+        {
+          "id": "5:954972339434663846",
+          "name": "description",
+          "type": 9
         }
       ],
       "relations": []
     },
     {
       "id": "2:3580325023322230753",
-      "lastPropertyId": "5:7435753940154734231",
+      "lastPropertyId": "7:8641712684505732465",
       "name": "StudySetModel",
       "properties": [
         {
@@ -54,32 +59,42 @@
           "type": 30
         },
         {
-          "id": "5:7435753940154734231",
-          "name": "totalTime",
+          "id": "6:5783780554668535613",
+          "name": "method",
+          "type": 6
+        },
+        {
+          "id": "7:8641712684505732465",
+          "name": "totalStudyTime",
           "type": 6
         }
       ],
       "relations": [
         {
-          "id": "3:6970483397980491624",
-          "name": "studySet",
-          "targetId": "2:3580325023322230753"
+          "id": "5:4626772353472901448",
+          "name": "studyItems",
+          "targetId": "1:297563413848231178"
         }
       ]
     }
   ],
   "lastEntityId": "2:3580325023322230753",
   "lastIndexId": "0:0",
-  "lastRelationId": "3:6970483397980491624",
+  "lastRelationId": "5:4626772353472901448",
   "lastSequenceId": "0:0",
   "modelVersion": 5,
   "modelVersionParserMinimum": 5,
   "retiredEntityUids": [],
   "retiredIndexUids": [],
-  "retiredPropertyUids": [],
+  "retiredPropertyUids": [
+    7435753940154734231,
+    1878895930675500349
+  ],
   "retiredRelationUids": [
     6320222587442499776,
-    2303739398122468565
+    2303739398122468565,
+    6970483397980491624,
+    7725405208799163809
   ],
   "version": 1
 }

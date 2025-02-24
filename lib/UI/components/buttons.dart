@@ -12,7 +12,7 @@ class Button {
 }
 
 extension Buttons on Button {
-  Widget iconButton(BuildContext context) => GestureDetector(
+  Widget iconButton(BuildContext context, exe) => GestureDetector(
       onTap: exe,
       child: Container(
         decoration: BoxDecoration(
@@ -60,9 +60,7 @@ extension Buttons on Button {
       onTap: exe,
       child: Container(
         decoration: BoxDecoration(
-            boxShadow: [
-              BoxShadow(color: AppColors.black, offset: Offset(4, 4))
-            ],
+            boxShadow: [Shadows.regularSolid],
             border: Border.all(width: 1, color: Color(0xFF04000B)),
             borderRadius: BorderRadius.circular(8)),
         width: MediaQuery.sizeOf(context).width,

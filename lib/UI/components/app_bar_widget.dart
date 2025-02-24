@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pardner/presentation/components/date_widget.dart';
-import 'package:pardner/presentation/components/profile_widget.dart';
+import 'package:pardner/UI/components/date_widget.dart';
+import 'package:pardner/UI/components/profile_widget.dart';
 
 import '../../config/styles.dart';
 
@@ -14,7 +14,7 @@ class AppBarWidget extends StatelessWidget {
       child: AppBar(
         title: DateWidget(),
         
-        backgroundColor: AppColors.white,
+        backgroundColor: AppColors.offWhite,
         elevation: 0,
         actions: [
           ProfileWidget(),

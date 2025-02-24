@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:pardner/config/styles.dart';
 import 'package:pardner/core/features/database/data/database_initialization.dart';
-import 'package:pardner/presentation/pages/main_page/main_page.dart';
+import 'package:pardner/UI/pages/main_page/main_page.dart';
 
 late DatabaseInitializations objectBox;
 

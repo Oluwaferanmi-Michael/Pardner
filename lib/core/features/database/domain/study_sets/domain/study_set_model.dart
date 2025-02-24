@@ -1,25 +1,27 @@
 import 'package:objectbox/objectbox.dart';
-import 'package:pardner/config/enums.dart';
 
+import '../../study_item/study_item_model.dart';
 
 @Entity()
 class StudySetModel {
-  @Id()
+  
   int id;
 
   String? name;
   String? description;
-  
-  List<String> dates;
-  Method method;
-  late int totalTime;
 
-  final studySet = ToMany<StudySetModel>();
+  List<String> dates;
+  int method;
+
+  int? totalStudyTime;
+
+  final studyItems = ToMany<StudyItemModel>();
 
   StudySetModel({
-    this.id = 0, 
-    this.method = Method.pomodoro,
+    this.id = 0,
+    required this.method,
     required this.dates,
+    this.totalStudyTime,
     this.name,
     this.description,
   });

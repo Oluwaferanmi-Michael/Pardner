@@ -1,37 +1,32 @@
 import 'package:pardner/core/features/database/application/database_stores.dart';
-import 'package:pardner/core/features/database/repository/database_function_repo.dart';
+// import 'package:pardner/core/features/database/repository/database_function_repo.dart';
 
-class StudySetFunctionsImpl implements DatabaseFunctionsRepo {
+class StudySetFunctionsImpl{
   final dataStores = DataBoxStores();
 
-  @override
-  void delete(value) {
+    void delete(value) {
     final box = dataStores.studySetBox;
 
     box.remove(value);
   }
 
-  @override
-  void read(value) {
+    void read(value) {
     final box = dataStores.studySetBox;
 
     box.get(value);
   }
 
-  @override
-  void readAll(value) {
+    void readAll() {
     final box = dataStores.studySetBox;
     box.getAll(); 
   }
 
-  @override
-  void update(value) {
+    void update(value) {
     final box = dataStores.studySetBox;
     box.put(value);
   }
 
-  @override
-  void create(value) {
+    void create(value) {
     final box = dataStores.studySetBox;
     box.put(value);
   }

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:pardner/presentation/components/app_bar_widget.dart';
-import 'package:pardner/presentation/components/controllers/bottom_nav_bar_controller.dart';
-import 'package:pardner/presentation/pages/main_page/schedule_page.dart';
+import 'package:pardner/UI/components/app_bar_widget.dart';
+import 'package:pardner/UI/components/controllers/bottom_nav_bar_controller.dart';
+import 'package:pardner/UI/pages/main_page/home_page.dart';
+import 'package:pardner/UI/pages/main_page/schedule_page.dart';
 
 import '../../components/floating_bottom_nav_bar.dart';
-import 'home_page.dart';
+
 
 class MainPage extends ConsumerStatefulWidget {
   const MainPage({super.key});

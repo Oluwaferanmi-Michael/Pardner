@@ -4,7 +4,7 @@ import 'package:pardner/config/styles.dart';
 import '../../components/buttons.dart';
 import '../../components/study_set_list_widget.dart';
 import '../../components/timer_preview.dart';
-import '../create_study_set_page.dart';
+import '../create_study_set_page/widgets/create_study_set_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({
@@ -18,8 +18,9 @@ class HomePage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
           child: Column(
+            mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
-            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+           
             spacing: 24,
             children: [
               StudySetTimerPreviewWidget(),
